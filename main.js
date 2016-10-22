@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
 var letters = require("./letter.js")
+var verify = require("./word.js")
 var word = require("./game.js");
 var selectedWord = word.selectWord.randomWord;
 
@@ -22,11 +23,16 @@ var questions = [
 ];
 
 function inquire(){
-  inquirer.prompt(questions).then(function (answers) {
-    console.log(answers.letter);
-  });
+  inquirer.prompt(questions).then(checkLetter);
 
+};
+
+function checkLetter(answers){
+  var check = new verify(selectedWord, answers.letter)
+    console.log(check.letter);
+    console.log(check.word);
 };  
+
 
 
 //========================================================================

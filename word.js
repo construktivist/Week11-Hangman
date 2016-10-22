@@ -16,3 +16,5 @@ function verifyLetter(x, y){
 	};	
 
 };
+
+module.exports = verifyLetter;
