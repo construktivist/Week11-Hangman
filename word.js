@@ -3,13 +3,13 @@ function verifyLetter(x, y){
 	this.letter = y;
 
 	this.verify = function(){
-		for (var i = 0; i < word.length; i++) {
-			if (word[i] === this.letter){
-				console.log("match!");
+		for (var i = 0; i < this.word.length; i++) {
+			if (this.word[i] === this.letter){
+				return true;
 			}
 
 			else{
-				console.log("no match!");
+				return false;
 			};
 		};
 

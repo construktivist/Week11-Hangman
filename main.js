@@ -3,9 +3,10 @@ var letters = require("./letter.js")
 var verify = require("./word.js")
 var word = require("./game.js");
 var selectedWord = word.selectWord.randomWord;
+var currentLetter;
 
 var blanks = new letters(selectedWord);
-blanks.display();
+blanks.showBlanks();
 
 var questions = [
   {
@@ -28,9 +29,18 @@ function inquire(){
 };
 
 function checkLetter(answers){
-  var check = new verify(selectedWord, answers.letter)
-    console.log(check.letter);
-    console.log(check.word);
+  var currentLetter = answers.letter;
+  var check = new verify(selectedWord, currentLetter)
+
+  if (check.verify()){
+    console.log("True!");
+    blanks.showLetter(currentLetter);
+    inquire();
+  }
+
+  else {
+    console.log("False!");
+  }  
 };  
 
 
