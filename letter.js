@@ -11,8 +11,17 @@ function letters(x){
 	};
 
 	this.showLetter = function(letter){
-		this.blanks[i] = letter;
-		console.log(this.blanks);
+		for (var i = 0; i < this.word.length; i++) {
+			if (this.word[i] === letter){
+				this.blanks[i] = letter;
+				console.log(this.blanks);
+			}
+
+			else{
+				console.log("No match!");
+			}
+		}
+
 	};
 
 };

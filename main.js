@@ -31,16 +31,8 @@ function inquire(){
 function checkLetter(answers){
   var currentLetter = answers.letter;
   var check = new verify(selectedWord, currentLetter)
-
-  if (check.verify()){
-    console.log("True!");
-    blanks.showLetter(currentLetter);
-    inquire();
-  }
-
-  else {
-    console.log("False!");
-  }  
+  blanks.showLetter(currentLetter);
+  inquire();
 };  
 
 
