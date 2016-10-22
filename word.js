@@ -1,4 +1,18 @@
-var getWord = require("./game.js");
-var word = getWord.selectWord.randomWord;
+function verifyLetter(x, y){
+	this.word = x;
+	this.letter = y;
 
-console.log(word);
+	this.verify = function(){
+		for (var i = 0; i < word.length; i++) {
+			if (word[i] === this.letter){
+				console.log("match!");
+			}
+
+			else{
+				console.log("no match!");
+			};
+		};
+
+	};	
+
+};
