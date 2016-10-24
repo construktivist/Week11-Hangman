@@ -1,6 +1,7 @@
 function letters(x){
 	this.word = x;
 	this.blanks = [];
+	this.guesses = 15;
 
 	this.showBlanks = function(){
 		for (var i = 0; i < this.word.length; i++) {
@@ -8,6 +9,7 @@ function letters(x){
 		}
 		console.log(this.word);
 		console.log(this.blanks);
+		console.log(this.guesses);
 	};
 
 	this.showLetter = function(letter){
@@ -17,10 +19,7 @@ function letters(x){
 				console.log(this.blanks);
 			}
 
-			else{
-				console.log("No match!");
-			}
-		}
+		};
 
 	};
 
